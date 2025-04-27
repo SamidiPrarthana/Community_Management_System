@@ -1,0 +1,108 @@
+/* Full-screen background */
+.signup-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../image/image7.jpg") no-repeat center center/cover;
+    position: relative;
+}
+
+/* Glassmorphism effect */
+.signup-container {
+    background: rgba(7, 7, 7, 0.386);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: white;
+}
+
+/* Heading & paragraph */
+.signup-container h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.signup-container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Sign-Up Button */
+.signup-button {
+    width: 107%;
+    padding: 12px;
+    background: rgba(0, 123, 255, 0.8);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.signup-button:hover {
+    background: rgba(0, 123, 255, 1);
+}
+
+/* Footer links */
+.signup-footer {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.signup-footer button {
+    color: white;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.signup-footer button:hover {
+    text-decoration: underline;
+}
+
+.signup-select-field {
+    width: 107%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.signup-select-field:focus {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.signup-select-field option {
+    color: black;
+}
