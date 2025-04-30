@@ -15,7 +15,7 @@ Our project is a **Community Management System** designed to simplify apartment 
 - **Employee Management**
 - **Marketplace and Payment Management**
 - **Visitor and Parking Management**
-- **User Management**
+- **Maintenance and Complaints Management**
 
 ---
 
