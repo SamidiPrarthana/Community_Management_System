@@ -7,6 +7,18 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './components/login.js';
 import Signup from './components/signup.js';
 
+//Rasindu
+import EmployeeListPage from './Page/Rasindu/EmployeeListPage.js';
+import AdminDashbord from './Page/Rasindu/AdminDashboard.js';
+import EditEmployeePage from './Page/Rasindu/EditEmployeePage.js';
+import AddEmployee from './Page/Rasindu/AddEmployee.js';
+import MainDashboard from './Page/Rasindu/mainDashborad.js';
+import EmployeeProfile from './Page/Rasindu/EmployeeProfile.js';
+import QRCodePage from "./Page/Rasindu/AttendanceForm.js";
+import MonthlySalaryReport from './Page/Rasindu/MonthlySalaryReport.js';
+import EmployeeSalaryReport from "./Page/Rasindu/EmployeeSalaryReport.js";
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
@@ -20,6 +32,18 @@ root.render(
 
       <Route path='/signup' element={< Signup />} />
       <Route path='/login' element={<Login />} />
+
+
+      <Route path="/employees" element={<EmployeeListPage/>}/>
+      <Route path="/empdashboard" element={<AdminDashbord/>}/>
+      <Route path="/edit_employee/:id" element={<EditEmployeePage />} />
+      <Route path="/empform" element={<AddEmployee/>}/>
+      <Route path="/maindashboard" element={<MainDashboard/>}/>
+      <Route path="/employeeProfile/:id" element={<EmployeeProfile/>}/>
+      <Route path="/attend" element={<QRCodePage/>}/>
+      <Route path="/monthlysalaryreport" element={<MonthlySalaryReport />} />
+      <Route path="/employee-salary-report/:employeeId" element={<EmployeeSalaryReport />} />
+
 
     </Routes>
 

@@ -1,0 +1,210 @@
+/* AdminDashboard.css - Dark Theme */
+
+/* Base Styles */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    background-color: #0f172a;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e2e8f0;
+  }
+  
+  /* Sidebar Styles */
+  .dashboard-sidebar {
+    width: 280px;
+    background: #1e293b;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #334155;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ff6b6b;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #334155;
+  }
+  
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+  }
+  
+  .menu-item {
+    padding: 0.8rem 1rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+    border: none;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .menu-item:hover {
+    background: #334155;
+    color: #ffffff;
+  }
+  
+  .menu-item.active {
+    background: #3b82f6;
+    color: white;
+  }
+  
+  .logout-button {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+  
+  .logout-button:hover {
+    background: #b91c1c;
+  }
+  
+  /* Main Content Styles */
+  .dashboard-main {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+  }
+  
+  .dashboard-heading {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #ffffff;
+  }
+  
+  /* Cards Grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .dashboard-card {
+    background: #1e293b;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #334155;
+  }
+  
+  .dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card-icon.blue {
+    color: #60a5fa;
+  }
+  
+  .card-icon.green {
+    color: #34d399;
+  }
+  
+  .card-icon.yellow {
+    color: #fbbf24;
+  }
+  
+  .dashboard-card h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #e2e8f0;
+  }
+  
+  .dashboard-card p {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .dashboard-container {
+      flex-direction: column;
+    }
+    
+    .dashboard-sidebar {
+      width: 100%;
+      padding: 1rem;
+    }
+    
+    .sidebar-menu {
+      display: flex;
+      overflow-x: auto;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .menu-item {
+      margin-bottom: 0;
+      white-space: nowrap;
+    }
+    
+    .card-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .dashboard-card {
+    animation: fadeIn 0.5s ease-out forwards;
+    animation-delay: calc(var(--card-order) * 0.1s);
+    opacity: 0;
+  }
+  
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #1e293b;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+  }
+  

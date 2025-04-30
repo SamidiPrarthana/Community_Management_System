@@ -1,0 +1,49 @@
+.employee-salary-card {
+    background: #2a2a2a;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .employee-info {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #3d3d3d;
+  }
+  
+  .employee-info h3 {
+    color: #bb86fc;
+    margin-bottom: 0.5rem;
+  }
+  
+  .salary-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #3d3d3d;
+  }
+  
+  .detail-row:last-child {
+    border-bottom: none;
+  }
+  
+  .total-salary {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid #bb86fc;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  .total-salary span:last-child {
+    color: #03dac6;
+  }

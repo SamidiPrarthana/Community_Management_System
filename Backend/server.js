@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
-const cors = require('cors')
+const cors = require("cors")
 const app = express()
 const host = 'localhost';
 const logger = require('./src/utils/logger');
@@ -49,6 +49,17 @@ const server = app.listen(PORT, host, () => {
 
 const userRoutes = require('./src/routes/Kavishka/userRouter');
 app.use('/api/users', userRoutes);
+
+
+//Rasindu
+const EmployeeRouter = require('./src/routes/Rasindu/Employee');
+app.use("/employee",EmployeeRouter);
+const AttendanceRouter = require('./src/routes/Rasindu/attendance');
+app.use("/attendance",AttendanceRouter);
+const salaryRoutes = require("./src/routes/Rasindu/salary");
+app.use("/salary", salaryRoutes);
+
+
 
 
 
