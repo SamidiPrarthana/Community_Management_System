@@ -1,5 +1,3 @@
-# Community_Management_System
-
 # 🏢 Community Management System (MERN Stack)
 
 A full-featured web application built using the **MERN Stack (MongoDB, Express.js, React.js, Node.js)** to streamline the management of apartment complexes. This system is designed for both residents and administrators to improve communication, simplify operations, and make apartment living more convenient.
