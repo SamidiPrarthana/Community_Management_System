@@ -4,7 +4,7 @@ const Employee = require("../../model/Rasindu/Employee");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
-const transporter = require("../../utils/mailer");
+
 
 
 // Ensure uploads directory exists

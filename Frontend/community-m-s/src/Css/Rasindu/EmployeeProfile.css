@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #6c5ce7;
+    --primary-color: #9387ed;
     --secondary-color: #a29bfe;
     --dark-bg: #1a1a2e;
     --dark-card: #16213e;
@@ -28,6 +28,8 @@
   
   .profile-header h1 {
     font-size: 1.8rem;
+    color: #0e1afa;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
     margin: 0;
   }
   
@@ -226,3 +228,31 @@
       gap: 1rem;
     }
   }
+  .qr-code-section {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+  }
+  
+  .qr-code-wrapper {
+    margin: 15px auto;
+    display: inline-block;
+  }
+  
+  .download-btn {
+    padding: 8px 16px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .download-btn:hover {
+    background-color: #0056b3;
+  }
+  

@@ -14,6 +14,10 @@ const PORT = process.env.PORT || 8070
 app.use(cors())
 app.use(bodyParser.json())
 
+const path = require("path");
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
+
+
 app.use((err, req, res, next) => {
     logger.error(err.stack);
     res.status(500).send('Something broke!');
@@ -24,8 +28,8 @@ app.use((err, req, res, next) => {
 const uri = process.env.MONGO_URI
 
 // Logging configuration
-const morganMiddleware = require("./src/utils/morganMiddleware");
-app.use(morganMiddleware);
+//const morganMiddleware = require("./src/utils/morganMiddleware");
+//app.use(morganMiddleware);
 
 
 const connect = async () => {

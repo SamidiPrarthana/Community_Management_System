@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -10,7 +10,9 @@ import {
   faMoneyBillWave,
   faIdBadge
 } from '@fortawesome/free-solid-svg-icons';
+import { QRCodeCanvas } from 'qrcode.react';
 import axios from 'axios';
+import html2canvas from 'html2canvas';
 import '../../Css/Rasindu/EmployeeProfile.css';
 
 const EmployeeProfile = () => {
@@ -18,6 +20,7 @@ const EmployeeProfile = () => {
   const [employee, setEmployee] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const qrRef = useRef();
 
   useEffect(() => {
     const fetchEmployee = async () => {
@@ -35,6 +38,17 @@ const EmployeeProfile = () => {
     fetchEmployee();
   }, [id]);
 
+  const downloadQRCode = () => {
+    const canvas = qrRef.current.querySelector('canvas');
+    if (canvas) {
+      const url = canvas.toDataURL('image/png');
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${employee.name}_QRCode.png`;
+      a.click();
+    }
+  };
+
   if (loading) {
     return <div className="loading-container">Loading employee details...</div>;
   }
@@ -46,6 +60,16 @@ const EmployeeProfile = () => {
   if (!employee) {
     return <div className="not-found">Employee not found</div>;
   }
+
+  const qrData = JSON.stringify({
+    employeeId: employee.employeeId,
+    name: employee.name,
+    email: employee.email,
+    contact: employee.contact,
+    address: employee.address,
+    role: employee.role,
+    hourlyRate: employee.hourlyRate
+  });
 
   return (
     <div className="employee-profile-container">
@@ -61,9 +85,9 @@ const EmployeeProfile = () => {
         <div className="profile-left-section">
           <div className="profile-photo-container">
             {employee.photo ? (
-              <img 
-                src={employee.photo} 
-                alt={`${employee.name}'s profile`} 
+              <img
+                src={employee.photo}
+                alt={`${employee.name}'s profile`}
                 className="profile-photo"
               />
             ) : (
@@ -76,11 +100,29 @@ const EmployeeProfile = () => {
           <div className="basic-info-card">
             <h2 className="employee-name">{employee.name}</h2>
             <p className="employee-role">{employee.role}</p>
-            
+
             <div className="hourly-rate-display">
               <FontAwesomeIcon icon={faMoneyBillWave} />
               <span>Hourly Rate: Rs. {employee.hourlyRate.toFixed(2)}</span>
             </div>
+          </div>
+
+          {/* QR Code Section */}
+          <div className="qr-code-section">
+            <h3>Employee QR Code</h3>
+            <div ref={qrRef} className="qr-code-wrapper">
+              <QRCodeCanvas
+                value={qrData}
+                size={180}
+                bgColor={"#ffffff"}
+                fgColor={"#000000"}
+                level={"H"}
+                includeMargin={true}
+              />
+            </div>
+            <button className="download-btn" onClick={downloadQRCode}>
+              Download QR Code
+            </button>
           </div>
         </div>
 

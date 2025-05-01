@@ -1,65 +1,115 @@
-// File: src/components/AttendanceForm.js
-
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../../Css/Rasindu/AttendanceForm.css';
+import { QrReader } from 'react-qr-reader';  // Use named import
+import axios from 'axios';
+import '../../Css/Rasindu/AttendanceForm.css'; // Create styling if needed
 
-const AttendanceForm = () => {
-  const [empId, setEmpId] = useState('');
+const QrScan = () => {
+  const [scannedId, setScannedId] = useState('');
   const [message, setMessage] = useState('');
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [checkInDone, setCheckInDone] = useState(false); // Track if check-in was done
+  const [checkInTime, setCheckInTime] = useState(null); // Store check-in time for delay validation
+  const [isCameraActive, setIsCameraActive] = useState(true); // Camera active state
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setMessage('');
+  const handleResult = async (result) => {
+    if (result && result.text && !scannedId) {
+      try {
+        const parsed = JSON.parse(result.text);
+        const empId = parsed.employeeId;
 
-    try {
-      // Log the empId to check if it's correctly passed
-      console.log("Submitted empId:", empId);
-      
-      const res = await axios.post("http://localhost:8070/attendance/mark", { empId });
-      setMessage(res.data.message);
-      setIsSuccess(true);
-    } catch (err) {
-      setMessage(err.response?.data?.error || "Error marking attendance");
-      setIsSuccess(false);
+        setScannedId(empId); // Prevent double scans
+        const res = await axios.post("http://localhost:8070/attendance/mark", { empId });
+
+        setMessage(res.data.message);
+        setSuccess(true);
+
+        // Set check-in time when check-in is done
+        if (res.data.message === 'Check-in successful') {
+          setCheckInDone(true);
+          setCheckInTime(new Date());
+        }
+
+        // Optionally reset scanner after delay
+        setTimeout(() => {
+          setScannedId('');
+          setMessage('');
+        }, 5000);
+      } catch (err) {
+        setMessage("Invalid QR or Attendance Error");
+        setSuccess(false);
+        console.error(err);
+      }
     }
   };
 
-  const handleBack = () => {
-    navigate(-1); // Goes back to the previous page
+  const handleError = (err) => {
+    console.error("QR Scan Error:", err);
+    setMessage("Camera Error");
+    setSuccess(false);
+  };
+
+  const handleCheckOut = async () => {
+    const currentTime = new Date();
+
+    // Check if 30 seconds have passed since check-in
+    if (checkInTime && (currentTime - checkInTime) >= 30000) {
+      try {
+        const res = await axios.post("http://localhost:8070/attendance/mark", { empId: scannedId });
+        setMessage(res.data.message);
+        setSuccess(true);
+        setCheckInDone(false);
+        setCheckInTime(null); // Reset check-in time after successful check-out
+      } catch (err) {
+        setMessage("Error during check-out.");
+        setSuccess(false);
+      }
+    } else {
+      setMessage("You need to wait 30 seconds after check-in before checking out.");
+      setSuccess(false);
+    }
+  };
+
+  const handleCameraReset = () => {
+    setIsCameraActive(true); // Reset camera for next scan
+    setCheckInDone(false); // Reset check-in status
   };
 
   return (
-    <div className="attendance-container">
-      <div className="attendance-card">
-        <button onClick={handleBack} className="attendance-back-button">
-          &larr; Back
-        </button>
-        <h2 className="attendance-title">Mark Your Attendance</h2>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Enter EMP ID"
-            value={empId}
-            onChange={(e) => setEmpId(e.target.value)}  // Update empId on input change
-            className="attendance-input"
-            required
+    <div className="qr-scan-container">
+      <button onClick={() => navigate(-1)} className="qr-scan-back-btn">&larr; Back</button>
+      <h2>Scan Employee QR Code</h2>
+
+      <div className="qr-scanner">
+        {isCameraActive && (
+          <QrReader
+            delay={300}
+            onError={handleError}
+            onResult={handleResult}
+            constraints={{ facingMode: 'environment' }}
+            style={{ width: '100%' }}
           />
-          <button type="submit" className="attendance-button">
-            Submit Attendance
-          </button>
-        </form>
-        {message && (
-          <div className={`attendance-message ${isSuccess ? 'success-message' : 'error-message'}`}>
-            {message}
-          </div>
         )}
+        <div className="scan-line"></div>
       </div>
+
+      {message && (
+        <div className={`qr-scan-message ${success ? 'success' : 'error'}`}>
+          {message}
+        </div>
+      )}
+
+      {checkInDone && (
+        <div>
+          <p>Check-in successful! Please wait for 30 seconds before checking out.</p>
+          <button onClick={handleCheckOut} className="check-out-btn">
+            Scan for Check-out
+          </button>
+        </div>
+      )}
     </div>
   );
 };
 
-export default AttendanceForm;
+export default QrScan;
