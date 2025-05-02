@@ -1,0 +1,12 @@
+.body-k1 {
+    position: relative;
+    min-height: 100vh;
+    background-image: url("../image/image4.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

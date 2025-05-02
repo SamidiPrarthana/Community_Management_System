@@ -1,0 +1,340 @@
+/* SRa - Salary Report (Rasindu) Styles */
+:root {
+  --SRa-primary: #4361ee;
+  --SRa-secondary: #3f37c9;
+  --SRa-accent: #4895ef;
+  --SRa-dark: #1f2937;
+  --SRa-light: #f8f9fa;
+  --SRa-success: #4cc9f0;
+  --SRa-warning: #f8961e;
+  --SRa-danger: #f94144;
+  --SRa-radius: 12px;
+  --SRa-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  --SRa-transition: all 0.3s ease;
+}
+
+/* Base Container */
+.SRa-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--SRa-dark);
+  background-color: var(--SRa-light);
+  border-radius: var(--SRa-radius);
+  box-shadow: var(--SRa-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.SRa-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, var(--SRa-primary), var(--SRa-accent));
+}
+
+/* Loading and Error States */
+.SRa-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 1.2rem;
+  color: var(--SRa-primary);
+}
+
+.SRa-loading::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(67, 97, 238, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--SRa-primary);
+  animation: SRa-spin 1s ease-in-out infinite;
+  margin-left: 10px;
+}
+
+.SRa-error {
+  padding: 1.5rem;
+  background-color: var(--SRa-danger);
+  color: white;
+  border-radius: var(--SRa-radius);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  animation: SRa-fadeIn 0.5s ease;
+}
+
+/* Header and Navigation */
+.SRa-heading {
+  text-align: center;
+  color: var(--SRa-primary);
+  margin-bottom: 2rem;
+  position: relative;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.SRa-heading::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--SRa-accent);
+  margin: 0.5rem auto;
+  border-radius: 2px;
+}
+
+.SRa-back-button {
+  background-color: var(--SRa-dark);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--SRa-transition);
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.SRa-back-button:hover {
+  background-color: var(--SRa-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Month Selector */
+.SRa-month-selector {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.SRa-month-selector select {
+  padding: 0.8rem 1.2rem;
+  border: 2px solid #e2e8f0;
+  border-radius: var(--SRa-radius);
+  background-color: white;
+  font-size: 1rem;
+  color: var(--SRa-dark);
+  cursor: pointer;
+  transition: var(--SRa-transition);
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+.SRa-month-selector select:focus {
+  outline: none;
+  border-color: var(--SRa-primary);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+/* Salary Card */
+.SRa-card {
+  background: white;
+  border-radius: var(--SRa-radius);
+  box-shadow: var(--SRa-shadow);
+  overflow: hidden;
+  transition: var(--SRa-transition);
+  animation: SRa-slideUp 0.5s ease;
+}
+
+.SRa-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.SRa-employee-info {
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--SRa-primary), var(--SRa-secondary));
+  color: white;
+  text-align: center;
+}
+
+.SRa-employee-info h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.SRa-employee-info p {
+  margin: 0.5rem 0 0;
+  opacity: 0.9;
+  font-size: 1rem;
+}
+
+.SRa-salary-details {
+  padding: 2rem;
+}
+
+.SRa-detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e2e8f0;
+  align-items: center;
+}
+
+.SRa-detail-row:last-child {
+  border-bottom: none;
+}
+
+.SRa-detail-row span:first-child {
+  font-weight: 600;
+  color: var(--SRa-dark);
+}
+
+.SRa-detail-row span:last-child {
+  font-weight: 700;
+  color: var(--SRa-primary);
+}
+
+.SRa-total-salary {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px dashed #cbd5e0;
+}
+
+.SRa-total-salary span:last-child {
+  font-size: 1.5rem;
+  color: var(--SRa-success);
+}
+
+/* Download Button */
+.SRa-download-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--SRa-radius);
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: var(--SRa-transition);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.SRa-download-button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes SRa-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes SRa-slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes SRa-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .SRa-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .SRa-heading {
+    font-size: 1.8rem;
+  }
+  
+  .SRa-employee-info h3 {
+    font-size: 1.5rem;
+  }
+  
+  .SRa-detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .SRa-detail-row span:last-child {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .SRa-month-selector {
+    flex-direction: column;
+  }
+  
+  .SRa-employee-info, .SRa-salary-details {
+    padding: 1.5rem;
+  }
+  
+  .SRa-total-salary span:last-child {
+    font-size: 1.3rem;
+  }
+}
+
+/* Dark Theme */
+.SRa-dark-theme {
+  --SRa-primary: #6c5ce7;
+  --SRa-secondary: #5649c0;
+  --SRa-accent: #7d6df1;
+  --SRa-dark: #121212;
+  --SRa-light: #1e1e1e;
+  --SRa-text: #e0e0e0;
+  --SRa-muted: #b0b0b0;
+  --SRa-border: #333333;
+  --SRa-success: #00cec9;
+  --SRa-danger: #ff7675;
+}
+
+.SRa-dark-theme .SRa-container {
+  background-color: var(--SRa-dark);
+  color: var(--SRa-text);
+  border: 1px solid var(--SRa-border);
+}
+
+.SRa-dark-theme .SRa-card {
+  background-color: #2a2a2a;
+  border: 1px solid var(--SRa-border);
+}
+
+.SRa-dark-theme .SRa-month-selector select {
+  background-color: #2a2a2a;
+  color: var(--SRa-text);
+  border-color: var(--SRa-border);
+}
+
+.SRa-dark-theme .SRa-detail-row {
+  border-bottom-color: var(--SRa-border);
+}
+
+.SRa-dark-theme .SRa-detail-row span:first-child {
+  color: var(--SRa-muted);
+}
+
+.SRa-dark-theme .SRa-total-salary {
+  border-top-color: var(--SRa-border);
+}

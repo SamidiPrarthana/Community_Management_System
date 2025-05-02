@@ -9,9 +9,11 @@ router.post('/register', UserController.registerController);
 router.post('/login', UserController.loginController);
 
 
-router.get('/users', authMiddleware, UserController.getAllUsersController);
-router.get('/users/:id', authMiddleware, UserController.getUserByIdController);
-router.put('/users/:id', authMiddleware, UserController.updateUserController);
-router.delete('/users/:id', authMiddleware, UserController.deleteUserController);
+router.get('/', authMiddleware, UserController.getAllUsersController);
+router.get('/:id', authMiddleware, UserController.getUserByIdController);
+router.put('/:id', authMiddleware, UserController.updateUserController);
+router.delete('/:id', authMiddleware, UserController.deleteUserController);
+router.get('/qr/scan/:id', UserController.getUserByQRCode);
+
 
 module.exports = router;

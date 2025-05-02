@@ -1,0 +1,129 @@
+.app {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto 30px;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-container label {
+    display: block;
+    margin: 10px 0;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+.slot-map {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.slot-map h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.slots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.slot-card {
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.slot-card:hover {
+    transform: scale(1.05);
+}
+
+.slot-card.free {
+    background-color: #28a745;
+    color: white;
+}
+
+.slot-card.occupied {
+    background-color: #dc3545;
+    color: white;
+}
+
+.slot-number {
+    font-weight: bold;
+}
+
+.slot-status {
+    font-size: 0.9em;
+}
+
+.dashboard {
+    margin-top: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dashboard th,
+.dashboard td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.dashboard th {
+    background-color: #007bff;
+    color: white;
+}
+
+.dashboard tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
