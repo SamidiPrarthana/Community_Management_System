@@ -1,4 +1,3 @@
-/* QR Scanner - Premium Compact Design */
 :root {
   --primary: #8a2be2;
   --primary-dark: #6a1b9a;
@@ -20,8 +19,7 @@
   50% { top: 85%; opacity: 1; }
 }
 
-/* Base Container - Compact Design */
-.qr-scan-container {
+.qr-scan-containerRa {
   max-width: 500px;
   margin: 1rem auto;
   padding: 1.5rem;
@@ -33,8 +31,7 @@
   overflow: hidden;
 }
 
-/* Header Section */
-.qr-scan-container h2 {
+.qr-scan-containerRa h2 {
   text-align: center;
   margin: 0.5rem 0 1.5rem;
   font-size: 1.5rem;
@@ -43,8 +40,7 @@
   position: relative;
 }
 
-/* Back Button - Floating Style */
-.qr-scan-back-btn {
+.qr-scan-back-btnRa {
   position: absolute;
   top: 1.5rem;
   left: 1.5rem;
@@ -64,13 +60,12 @@
   border: 1px solid rgba(138, 43, 226, 0.3);
 }
 
-.qr-scan-back-btn:hover {
+.qr-scan-back-btnRa:hover {
   background: rgba(138, 43, 226, 0.4);
   transform: translateX(-3px);
 }
 
-/* Scanner Container - Focused Design */
-.qr-scanner {
+.qr-scannerRa {
   position: relative;
   margin: 0 auto;
   border-radius: var(--border-radius);
@@ -80,8 +75,7 @@
   box-shadow: 0 0 0 2px var(--primary-dark);
 }
 
-/* Scanner Overlay - Minimalist Design */
-.qr-scanner::before {
+.qr-scannerRa::before {
   content: '';
   position: absolute;
   top: 0;
@@ -93,8 +87,7 @@
   pointer-events: none;
 }
 
-/* Scanner Guide - Center Square */
-.qr-scanner::after {
+.qr-scannerRa::after {
   content: '';
   position: absolute;
   top: 25%;
@@ -107,8 +100,7 @@
   opacity: 0.7;
 }
 
-/* Animated Scan Line */
-.scan-line {
+.scan-lineRa {
   position: absolute;
   top: 15%;
   left: 25%;
@@ -120,8 +112,7 @@
   box-shadow: 0 0 10px var(--accent);
 }
 
-/* Status Messages - Compact */
-.qr-scan-message {
+.qr-scan-messageRa {
   padding: 0.8rem;
   margin: 1.5rem auto 0;
   border-radius: var(--border-radius);
@@ -137,32 +128,31 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-.qr-scan-message.success {
+.qr-scan-messageRa.success {
   background: rgba(0, 230, 118, 0.1);
   color: var(--success);
   border: 1px solid var(--success);
 }
 
-.qr-scan-message.error {
+.qr-scan-messageRa.error {
   background: rgba(255, 82, 82, 0.1);
   color: var(--error);
   border: 1px solid var(--error);
 }
 
-/* Responsive Design */
 @media (max-width: 600px) {
-  .qr-scan-container {
+  .qr-scan-containerRa {
     padding: 1rem;
     margin: 0.5rem;
     border-radius: 12px;
   }
-  
-  .qr-scanner {
+
+  .qr-scannerRa {
     max-width: 100%;
     border-radius: 12px;
   }
-  
-  .qr-scan-back-btn {
+
+  .qr-scan-back-btnRa {
     top: 1rem;
     left: 1rem;
     padding: 0.4rem 0.8rem;

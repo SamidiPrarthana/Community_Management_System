@@ -1,7 +1,4 @@
-/* EmployeeListPage.css - Dark Theme */
-
-/* Base Styles */
-.employee-list-container {
+.employee-list-containerLRa {
   display: flex;
   justify-content: center;
   min-height: 100vh;
@@ -11,7 +8,7 @@
   color: #e0e0e0;
 }
 
-.employee-list-content {
+.employee-list-contentLRa {
   width: 100%;
   max-width: 1200px;
   background: #1e1e1e;
@@ -27,8 +24,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Header Section */
-.employee-heading {
+.employee-headingLRa {
   color: #ffffff;
   font-size: 2rem;
   margin-bottom: 1.5rem;
@@ -38,7 +34,7 @@
   padding-bottom: 0.5rem;
 }
 
-.employee-heading::after {
+.employee-headingLRa::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -50,16 +46,14 @@
   border-radius: 2px;
 }
 
-/* Button Container */
-.employee-buttons-container {
+.employee-buttons-containerLRa {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1.5rem;
   gap: 1rem;
 }
 
-/* Button Styles */
-.employee-button {
+.employee-buttonLRa {
   padding: 0.6rem 1.2rem;
   border: none;
   border-radius: 6px;
@@ -73,63 +67,72 @@
   gap: 0.5rem;
 }
 
-.employee-button:hover {
+.employee-buttonLRa:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.add-button {
+.add-buttonLRa {
   background-color: #03dac6;
   color: #121212;
 }
 
-.add-button:hover {
+.add-buttonLRa:hover {
   background-color: #00b4a0;
 }
 
-.nav-button {
+.nav-buttonLRa {
   background-color: #6200ea;
   color: white;
 }
 
-.nav-button:hover {
+.nav-buttonLRa:hover {
   background-color: #3700b3;
 }
 
-.view-button {
+.view-buttonLRa {
   background-color: #3700b3;
   color: white;
   padding: 0.4rem 0.8rem;
   margin-right: 0.5rem;
 }
 
-.view-button:hover {
+.view-buttonLRa:hover {
   background-color: #1a0077;
 }
 
-.edit-button {
+.edit-buttonLRa {
   background-color: #bb86fc;
   color: #121212;
   padding: 0.4rem 0.8rem;
   margin-right: 0.5rem;
 }
 
-.edit-button:hover {
+.edit-buttonLRa:hover {
   background-color: #9a67cc;
 }
 
-.delete-button {
+.delete-buttonLRa {
   background-color: #cf6679;
   color: white;
   padding: 0.4rem 0.8rem;
 }
 
-.delete-button:hover {
+.delete-buttonLRa:hover {
   background-color: #b00020;
 }
 
-/* Table Styles */
-.employee-table {
+.report-buttonLRa {
+  background-color: #03dac6;
+  color: #121212;
+  padding: 0.4rem 0.8rem;
+}
+
+.report-buttonLRa:hover {
+  background-color: #00b4a0;
+}
+
+.employee-tableLRa {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
@@ -139,82 +142,79 @@
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
 }
 
-.employee-table thead {
+.employee-tableLRa thead {
   background: linear-gradient(135deg, #3700b3, #121212);
   color: white;
 }
 
-.employee-th-td {
+.employee-th-tdLRa {
   padding: 1rem;
   text-align: left;
   border-bottom: 1px solid #333;
 }
 
-.employee-th {
+.employee-thLRa {
   font-weight: 600;
   color: white;
 }
 
-.employee-table tbody tr {
+.employee-tableLRa tbody tr {
   transition: all 0.2s ease;
 }
 
-.employee-table tbody tr:nth-child(odd) {
+.employee-tableLRa tbody tr:nth-child(odd) {
   background-color: #252525;
 }
 
-.employee-table tbody tr:nth-child(even) {
+.employee-tableLRa tbody tr:nth-child(even) {
   background-color: #2d2d2d;
 }
 
-.employee-table tbody tr:hover {
+.employee-tableLRa tbody tr:hover {
   background-color: #333;
   transform: scale(1.01);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Action Buttons Container */
-.employee-th-td:last-child {
+.employee-th-tdLRa:last-child {
   display: flex;
   gap: 0.5rem;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
-  .employee-list-container {
+  .employee-list-containerLRa {
     padding: 1rem;
   }
-  
-  .employee-list-content {
+
+  .employee-list-contentLRa {
     padding: 1rem;
   }
-  
-  .employee-table {
+
+  .employee-tableLRa {
     display: block;
     overflow-x: auto;
   }
-  
-  .employee-buttons-container {
+
+  .employee-buttons-containerLRa {
     flex-direction: column;
   }
-  
-  .employee-button {
+
+  .employee-buttonLRa {
     width: 100%;
     margin-bottom: 0.5rem;
   }
-  
-  .employee-th-td:last-child {
+
+  .employee-th-tdLRa:last-child {
     flex-direction: column;
     gap: 0.3rem;
   }
-  
-  .view-button, .edit-button, .delete-button {
+
+  .view-buttonLRa, .edit-buttonLRa, .delete-buttonLRa {
     width: 100%;
     margin-right: 0;
   }
 }
 
-/* Animation for table rows */
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -226,20 +226,19 @@
   }
 }
 
-.employee-table tbody tr {
+.employee-tableLRa tbody tr {
   animation: slideIn 0.3s ease-out forwards;
   animation-delay: calc(var(--row-index) * 0.05s);
 }
 
-/* Loading State */
-.loading-state {
+.loading-stateLRa {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 200px;
 }
 
-.loading-spinner {
+.loading-spinnerLRa {
   border: 4px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   border-top: 4px solid #bb86fc;
@@ -253,7 +252,6 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;

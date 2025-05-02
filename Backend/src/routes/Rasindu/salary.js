@@ -82,7 +82,7 @@ router.get("/monthlysal/:year/:month", async (req, res) => {
 });
 
 // Mark Check-in/Check-out for an employee
-router.post("/mark", async (req, res) => {
+/*router.post("/mark", async (req, res) => {
   const { empId } = req.body;
 
   if (!empId) {
@@ -116,6 +116,6 @@ router.post("/mark", async (req, res) => {
     console.error("Attendance marking error:", err);
     res.status(500).json({ error: "Server error" });
   }
-});
+});*/
 
 module.exports = router;

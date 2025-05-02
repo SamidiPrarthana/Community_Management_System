@@ -3,8 +3,7 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import "../../Css/Rasindu/EmployeeListPage.css";
 
-
-const EmployeeListPage = () => {
+const EmployeeListPageLRa = () => {
   const [employees, setEmployees] = useState([]);
   const navigate = useNavigate();
 
@@ -36,47 +35,42 @@ const EmployeeListPage = () => {
     }
   };
 
-  
-
   return (
-    <div className="employee-list-container">
-      <div className="employee-list-content">
-        <h2 className="employee-heading">Employee List</h2>
-        
-        <div className="employee-buttons-container">
-          <button className="employee-button add-button" onClick={() => navigate("/empform")}>
+    <div className="employee-list-containerLRa">
+      <div className="employee-list-contentLRa">
+        <h2 className="employee-headingLRa">Employee List</h2>
+
+        <div className="employee-buttons-containerLRa">
+          <button className="employee-buttonLRa add-buttonLRa" onClick={() => navigate("/empform")}>
             ADD Employee
           </button>
-          <button className="employee-button nav-button" onClick={() => navigate('/empdashboard')}>
+          <button className="employee-buttonLRa nav-buttonLRa" onClick={() => navigate('/empdashboard')}>
             Dashboard
           </button>
         </div>
 
-        <table className="employee-table">
+        <table className="employee-tableLRa">
           <thead>
             <tr>
-              <th className="employee-th-td employee-th">Name</th>
-              <th className="employee-th-td employee-th">Email</th>
-              <th className="employee-th-td employee-th">Role</th>
-              <th className="employee-th-td employee-th">Hourly Rate</th>
-              
-              <th className="employee-th-td employee-th">Actions</th>
+              <th className="employee-th-tdLRa employee-thLRa">Name</th>
+              <th className="employee-th-tdLRa employee-thLRa">Email</th>
+              <th className="employee-th-tdLRa employee-thLRa">Role</th>
+              <th className="employee-th-tdLRa employee-thLRa">Hourly Rate</th>
+              <th className="employee-th-tdLRa employee-thLRa">Actions</th>
             </tr>
           </thead>
           <tbody>
             {employees.map((employee) => (
               <tr key={employee._id}>
-                <td className="employee-th-td">{employee.name}</td>
-                <td className="employee-th-td">{employee.email}</td>
-                <td className="employee-th-td">{employee.role}</td>
-                <td className="employee-th-td">{employee.hourlyRate}</td>
-               
-                <td className="employee-th-td">
-                  <button className="employee-button view-button" onClick={() => navigate(`/employeeProfile/${employee._id}`)}>View</button>
-                  <button className="employee-button edit-button" onClick={() => navigate(`/edit_employee/${employee._id}`)}>Edit</button>
-                  <button className="employee-button delete-button" onClick={() => deleteEmployee(employee._id)}>Delete</button>
-                  <button className="employee-button report-button"onClick={() => navigate(`/employee-salary-report/${employee.employeeId}`)}>Salary Report</button>
-
+                <td className="employee-th-tdLRa">{employee.name}</td>
+                <td className="employee-th-tdLRa">{employee.email}</td>
+                <td className="employee-th-tdLRa">{employee.role}</td>
+                <td className="employee-th-tdLRa">{employee.hourlyRate}</td>
+                <td className="employee-th-tdLRa">
+                  <button className="employee-buttonLRa view-buttonLRa" onClick={() => navigate(`/employeeProfile/${employee._id}`)}>View</button>
+                  <button className="employee-buttonLRa edit-buttonLRa" onClick={() => navigate(`/edit_employee/${employee._id}`)}>Edit</button>
+                  <button className="employee-buttonLRa delete-buttonLRa" onClick={() => deleteEmployee(employee._id)}>Delete</button>
+                  <button className="employee-buttonLRa report-buttonLRa" onClick={() => navigate(`/employee-salary-report/${employee.employeeId}`)}>Salary Report</button>
                 </td>
               </tr>
             ))}
@@ -84,8 +78,7 @@ const EmployeeListPage = () => {
         </table>
       </div>
     </div>
-
   );
 };
 
-export default EmployeeListPage;
+export default EmployeeListPageLRa;

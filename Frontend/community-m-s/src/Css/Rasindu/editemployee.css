@@ -1,7 +1,4 @@
-/* editemployee.css - Dark Theme */
-
-/* Base Styles */
-.edit {
+.editERa {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,7 +9,7 @@
   color: #e0e0e0;
 }
 
-.edit_list2 {
+.edit_list2ERa {
   width: 100%;
   max-width: 800px;
   background: #1e1e1e;
@@ -28,8 +25,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Header */
-.head2 {
+.head2ERa {
   color: #ffffff;
   font-size: 2rem;
   margin-bottom: 1.5rem;
@@ -38,7 +34,7 @@
   padding-bottom: 0.5rem;
 }
 
-.head2::after {
+.head2ERa::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -50,25 +46,24 @@
   border-radius: 2px;
 }
 
-/* Form Styles */
-.for2 {
+.for2ERa {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
-.for2 > div {
+.for2ERa > div {
   margin-bottom: 1rem;
 }
 
-.for2 label {
+.for2ERa label {
   display: block;
   margin-bottom: 0.5rem;
   color: #bb86fc;
   font-size: 0.95rem;
 }
 
-.in2 {
+.in2ERa {
   width: 80%;
   padding: 0.75rem;
   background: #2d2d2d;
@@ -79,13 +74,13 @@
   transition: all 0.3s ease;
 }
 
-.in2:focus {
+.in2ERa:focus {
   outline: none;
   border-color: #bb86fc;
   box-shadow: 0 0 0 2px rgba(187, 134, 252, 0.2);
 }
 
-select.in2 {
+select.in2ERa {
   appearance: none;
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23bb86fc'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
@@ -93,8 +88,7 @@ select.in2 {
   background-size: 15px;
 }
 
-/* File Input Styling */
-.for2 input[type="file"] {
+.for2ERa input[type="file"] {
   width: 100%;
   padding: 0.5rem;
   background: #2d2d2d;
@@ -103,7 +97,7 @@ select.in2 {
   color: #ffffff;
 }
 
-.for2 input[type="file"]::file-selector-button {
+.for2ERa input[type="file"]::file-selector-button {
   padding: 0.5rem 1rem;
   background: #6200ea;
   color: white;
@@ -114,12 +108,11 @@ select.in2 {
   transition: all 0.3s ease;
 }
 
-.for2 input[type="file"]::file-selector-button:hover {
+.for2ERa input[type="file"]::file-selector-button:hover {
   background: #3700b3;
 }
 
-/* Profile Image Preview */
-.for2 img {
+.for2ERa img {
   display: block;
   margin-top: 0.5rem;
   border-radius: 6px;
@@ -128,8 +121,7 @@ select.in2 {
   height: auto;
 }
 
-/* Submit Button */
-.btnsubmit2 {
+.btnsubmit2ERa {
   grid-column: 1 / -1;
   padding: 0.8rem;
   background: linear-gradient(135deg, #6200ea, #3700b3);
@@ -143,33 +135,31 @@ select.in2 {
   margin-top: 1rem;
 }
 
-.btnsubmit2:hover {
+.btnsubmit2ERa:hover {
   background: linear-gradient(135deg, #3700b3, #1a0077);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(98, 0, 234, 0.3);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
-  .edit {
+  .editERa {
     padding: 1rem;
   }
-  
-  .edit_list2 {
+
+  .edit_list2ERa {
     padding: 1.5rem;
   }
-  
-  .for2 {
+
+  .for2ERa {
     grid-template-columns: 1fr;
   }
-  
-  .head2 {
+
+  .head2ERa {
     font-size: 1.5rem;
   }
 }
 
-/* Animation for form elements */
-.for2 > div {
+.for2ERa > div {
   animation: slideUp 0.4s ease-out forwards;
   animation-delay: calc(var(--item-order) * 0.05s);
   opacity: 0;
@@ -186,8 +176,7 @@ select.in2 {
   }
 }
 
-/* Error State (optional) */
-.in2.error {
+.in2ERa.error {
   border-color: #cf6679;
   box-shadow: 0 0 0 2px rgba(207, 102, 121, 0.2);
 }

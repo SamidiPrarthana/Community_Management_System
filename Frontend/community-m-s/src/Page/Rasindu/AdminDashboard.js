@@ -22,12 +22,11 @@ export default function AdminDashboard() {
         const fetchTotalSalary = async () => {
             const currentDate = new Date();
             const year = currentDate.getFullYear();
-            const month = currentDate.getMonth() + 1; // Months are 0-based
+            const month = currentDate.getMonth() + 1;
 
             try {
                 const response = await axios.get(`http://localhost:8070/salary/monthlysal/${year}/${month}`);
                 const salaryData = response.data;
-
                 const total = salaryData.reduce((sum, emp) => sum + emp.monthlySalary, 0);
                 setTotalSalary(`$${total.toFixed(2)}`);
             } catch (error) {
@@ -40,51 +39,51 @@ export default function AdminDashboard() {
     }, []);
 
     return (
-        <div className="admin-dashboard-container">
-            <aside className="admin-sidebar">
+        <div className="admin-dashboard-containerRa">
+            <aside className="admin-sidebarRa">
                 <div>
-                    <h2 className="sidebar-title">HI, Rasindu...</h2>
-                    <ul className="sidebar-menu">
+                    <h2 className="sidebar-titleRa">HI, Rasindu...</h2>
+                    <ul className="sidebar-menuRa">
                         <li>
-                            <button className="menu-item" onClick={() => navigate("/")}>
+                            <button className="menu-itemRa" onClick={() => navigate("/")}>
                                 Home
                             </button>
                         </li>
                         <li>
-                            <button className="menu-item" onClick={() => navigate("/employees")}>
+                            <button className="menu-itemRa" onClick={() => navigate("/employees")}>
                                 Employees
                             </button>
                         </li>
                         <li>
-                            <button className="menu-item" onClick={() => navigate("/monthlysalaryreport")}>
+                            <button className="menu-itemRa" onClick={() => navigate("/monthlysalaryreport")}>
                                 Salary
                             </button>
                         </li>
                         <li>
-                            <button className="menu-item" onClick={() => navigate("/attend")}>
+                            <button className="menu-itemRa" onClick={() => navigate("/attend")}>
                                 Attendance
                             </button>
                         </li>
                     </ul>
                 </div>
-                <button className="logout-button" onClick={() => navigate("/maindashboard/")}>
+                <button className="logout-buttonRa" onClick={() => navigate("/maindashboard/")}>
                     <FiLogOut /> BACK
                 </button>
             </aside>
 
-            <main className="admin-main-content">
-                <h1 className="dashboard-heading">Dashboard</h1>
-                <div className="card-grid">
-                    <div className="dashboard-card">
-                        <FiUsers className="icon-blue" />
+            <main className="admin-main-contentRa">
+                <h1 className="dashboard-headingRa">Dashboard</h1>
+                <div className="card-gridRa">
+                    <div className="dashboard-cardRa">
+                        <FiUsers className="icon-blueRa" />
                         <h2>Total Employees</h2>
-                        <p className="card-value">{totalEmployees}</p>
+                        <p className="card-valueRa">{totalEmployees}</p>
                     </div>
 
-                    <div className="dashboard-card">
-                        <FiDollarSign className="icon-yellow" />
+                    <div className="dashboard-cardRa">
+                        <FiDollarSign className="icon-yellowRa" />
                         <h2>Total Salary</h2>
-                        <p className="card-value">{totalSalary}</p>
+                        <p className="card-valueRa">{totalSalary}</p>
                     </div>
                 </div>
             </main>

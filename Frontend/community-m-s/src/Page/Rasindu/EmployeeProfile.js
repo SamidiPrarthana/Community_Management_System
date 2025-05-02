@@ -1,3 +1,4 @@
+// src/components/Rasindu/EmployeeProfile.js
 import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,11 +9,11 @@ import {
   faHome,
   faBriefcase,
   faMoneyBillWave,
-  faIdBadge
+  faIdBadge,
+  faDownload
 } from '@fortawesome/free-solid-svg-icons';
 import { QRCodeCanvas } from 'qrcode.react';
 import axios from 'axios';
-import html2canvas from 'html2canvas';
 import '../../Css/Rasindu/EmployeeProfile.css';
 
 const EmployeeProfile = () => {
@@ -20,6 +21,7 @@ const EmployeeProfile = () => {
   const [employee, setEmployee] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [photoError, setPhotoError] = useState(false);
   const qrRef = useRef();
 
   useEffect(() => {
@@ -34,9 +36,12 @@ const EmployeeProfile = () => {
         console.error('Error fetching employee:', err);
       }
     };
-
     fetchEmployee();
   }, [id]);
+
+  const handleImageError = () => {
+    setPhotoError(true);
+  };
 
   const downloadQRCode = () => {
     const canvas = qrRef.current.querySelector('canvas');
@@ -49,17 +54,9 @@ const EmployeeProfile = () => {
     }
   };
 
-  if (loading) {
-    return <div className="loading-container">Loading employee details...</div>;
-  }
-
-  if (error) {
-    return <div className="error-container">{error}</div>;
-  }
-
-  if (!employee) {
-    return <div className="not-found">Employee not found</div>;
-  }
+  if (loading) return <div className="loading-container">Loading employee details...</div>;
+  if (error) return <div className="error-container">{error}</div>;
+  if (!employee) return <div className="not-found">Employee not found</div>;
 
   const qrData = JSON.stringify({
     employeeId: employee.employeeId,
@@ -72,7 +69,7 @@ const EmployeeProfile = () => {
   });
 
   return (
-    <div className="employee-profile-container">
+    <div className="employee-profile-container dark-theme">
       <div className="profile-header">
         <h1>Employee Profile</h1>
         <div className="employee-id-badge">
@@ -84,11 +81,12 @@ const EmployeeProfile = () => {
       <div className="profile-content">
         <div className="profile-left-section">
           <div className="profile-photo-container">
-            {employee.photo ? (
+            {employee.photo && !photoError ? (
               <img
                 src={employee.photo}
                 alt={`${employee.name}'s profile`}
                 className="profile-photo"
+                onError={handleImageError}
               />
             ) : (
               <div className="profile-photo-placeholder">
@@ -100,28 +98,26 @@ const EmployeeProfile = () => {
           <div className="basic-info-card">
             <h2 className="employee-name">{employee.name}</h2>
             <p className="employee-role">{employee.role}</p>
-
             <div className="hourly-rate-display">
               <FontAwesomeIcon icon={faMoneyBillWave} />
               <span>Hourly Rate: Rs. {employee.hourlyRate.toFixed(2)}</span>
             </div>
           </div>
 
-          {/* QR Code Section */}
           <div className="qr-code-section">
             <h3>Employee QR Code</h3>
             <div ref={qrRef} className="qr-code-wrapper">
               <QRCodeCanvas
                 value={qrData}
                 size={180}
-                bgColor={"#ffffff"}
-                fgColor={"#000000"}
+                bgColor={"#ffffff"}  // White background
+                fgColor={"#000000"}  // Black foreground
                 level={"H"}
                 includeMargin={true}
               />
             </div>
             <button className="download-btn" onClick={downloadQRCode}>
-              Download QR Code
+              <FontAwesomeIcon icon={faDownload} /> Download QR Code
             </button>
           </div>
         </div>

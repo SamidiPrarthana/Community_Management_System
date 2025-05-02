@@ -8,9 +8,9 @@ const QrScan = () => {
   const [scannedId, setScannedId] = useState('');
   const [message, setMessage] = useState('');
   const [success, setSuccess] = useState(false);
-  const [checkInDone, setCheckInDone] = useState(false); // Track if check-in was done
-  const [checkInTime, setCheckInTime] = useState(null); // Store check-in time for delay validation
-  const [isCameraActive, setIsCameraActive] = useState(true); // Camera active state
+  const [checkInDone, setCheckInDone] = useState(false);
+  const [checkInTime, setCheckInTime] = useState(null);
+  const [isCameraActive, setIsCameraActive] = useState(true);
   const navigate = useNavigate();
 
   const handleResult = async (result) => {
@@ -19,23 +19,33 @@ const QrScan = () => {
         const parsed = JSON.parse(result.text);
         const empId = parsed.employeeId;
 
-        setScannedId(empId); // Prevent double scans
+        const now = new Date();
+
+        if (checkInDone && checkInTime && (now - checkInTime) < 30000) {
+          setMessage("Please wait at least 30 seconds before check-out.");
+          setSuccess(false);
+          return;
+        }
+
+        setScannedId(empId);
         const res = await axios.post("http://localhost:8070/attendance/mark", { empId });
 
         setMessage(res.data.message);
         setSuccess(true);
 
-        // Set check-in time when check-in is done
         if (res.data.message === 'Check-in successful') {
           setCheckInDone(true);
-          setCheckInTime(new Date());
+          setCheckInTime(now);
+        } else if (res.data.message === 'Check-out successful') {
+          setCheckInDone(false);
+          setCheckInTime(null);
         }
 
-        // Optionally reset scanner after delay
         setTimeout(() => {
           setScannedId('');
           setMessage('');
         }, 5000);
+
       } catch (err) {
         setMessage("Invalid QR or Attendance Error");
         setSuccess(false);
@@ -50,38 +60,12 @@ const QrScan = () => {
     setSuccess(false);
   };
 
-  const handleCheckOut = async () => {
-    const currentTime = new Date();
-
-    // Check if 30 seconds have passed since check-in
-    if (checkInTime && (currentTime - checkInTime) >= 30000) {
-      try {
-        const res = await axios.post("http://localhost:8070/attendance/mark", { empId: scannedId });
-        setMessage(res.data.message);
-        setSuccess(true);
-        setCheckInDone(false);
-        setCheckInTime(null); // Reset check-in time after successful check-out
-      } catch (err) {
-        setMessage("Error during check-out.");
-        setSuccess(false);
-      }
-    } else {
-      setMessage("You need to wait 30 seconds after check-in before checking out.");
-      setSuccess(false);
-    }
-  };
-
-  const handleCameraReset = () => {
-    setIsCameraActive(true); // Reset camera for next scan
-    setCheckInDone(false); // Reset check-in status
-  };
-
   return (
-    <div className="qr-scan-container">
-      <button onClick={() => navigate(-1)} className="qr-scan-back-btn">&larr; Back</button>
+    <div className="qr-scan-containerRa">
+      <button onClick={() => navigate(-1)} className="qr-scan-back-btnRa">&larr; Back</button>
       <h2>Scan Employee QR Code</h2>
 
-      <div className="qr-scanner">
+      <div className="qr-scannerRa">
         {isCameraActive && (
           <QrReader
             delay={300}
@@ -91,21 +75,12 @@ const QrScan = () => {
             style={{ width: '100%' }}
           />
         )}
-        <div className="scan-line"></div>
+        <div className="scan-lineRa"></div>
       </div>
 
       {message && (
-        <div className={`qr-scan-message ${success ? 'success' : 'error'}`}>
+        <div className={`qr-scan-messageRa ${success ? 'success' : 'error'}`}>
           {message}
-        </div>
-      )}
-
-      {checkInDone && (
-        <div>
-          <p>Check-in successful! Please wait for 30 seconds before checking out.</p>
-          <button onClick={handleCheckOut} className="check-out-btn">
-            Scan for Check-out
-          </button>
         </div>
       )}
     </div>

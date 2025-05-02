@@ -1,12 +1,12 @@
 /* Admin Dashboard Styles */
-.admin-dashboard-container {
+.admin-dashboard-containerRa {
   display: flex;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.832);
   width: 100%;
 }
 
-.admin-sidebar {
+.admin-sidebarRa {
   width: 250px;
   background: #1f2937;
   color: white;
@@ -16,20 +16,20 @@
   justify-content: space-between;
 }
 
-.sidebar-title {
+.sidebar-titleRa {
   font-size: 22px;
   color: #ff5656;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-.sidebar-menu {
+.sidebar-menuRa {
   list-style: none;
   padding: 0;
   margin-top: 100px;
 }
 
-.menu-item {
+.menu-itemRa {
   padding: 12px;
   font-size: 25px;
   cursor: pointer;
@@ -46,11 +46,11 @@
   text-align: left;
 }
 
-.menu-item:hover {
+.menu-itemRa:hover {
   background: #374151;
 }
 
-.logout-button {
+.logout-buttonRa {
   background: #dc2626;
   color: white;
   border: none;
@@ -66,30 +66,30 @@
   gap: 8px;
 }
 
-.logout-button:hover {
+.logout-buttonRa:hover {
   background: #b91c1c;
 }
 
-.admin-main-content {
+.admin-main-contentRa {
   flex: 1;
   padding: 20px;
   overflow-y: auto;
 }
 
-.dashboard-heading {
+.dashboard-headingRa {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
   color: white;
 }
 
-.card-grid {
+.card-gridRa {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-.dashboard-card {
+.dashboard-cardRa {
   background: white;
   padding: 20px;
   border-radius: 10px;
@@ -98,29 +98,29 @@
   transition: transform 0.3s;
 }
 
-.dashboard-card:hover {
+.dashboard-cardRa:hover {
   transform: translateY(-5px);
 }
 
-.icon-blue {
+.icon-blueRa {
   font-size: 40px;
   color: #3b82f6;
   margin-bottom: 10px;
 }
 
-.icon-green {
+.icon-greenRa {
   font-size: 40px;
   color: #10b981;
   margin-bottom: 10px;
 }
 
-.icon-yellow {
+.icon-yellowRa {
   font-size: 40px;
   color: #f59e0b;
   margin-bottom: 10px;
 }
 
-.card-value {
+.card-valueRa {
   font-size: 24px;
   font-weight: bold;
   margin: 10px 0;
@@ -128,29 +128,29 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .admin-dashboard-container {
+  .admin-dashboard-containerRa {
       flex-direction: column;
   }
-  
-  .admin-sidebar {
+
+  .admin-sidebarRa {
       width: 100%;
       padding: 10px;
   }
-  
-  .sidebar-menu {
+
+  .sidebar-menuRa {
       margin-top: 20px;
       display: flex;
       flex-wrap: wrap;
       gap: 5px;
   }
-  
-  .menu-item {
+
+  .menu-itemRa {
       margin-top: 10px;
       font-size: 16px;
       padding: 8px;
   }
-  
-  .card-grid {
+
+  .card-gridRa {
       grid-template-columns: 1fr;
   }
 }

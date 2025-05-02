@@ -13,8 +13,6 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const employeeName = "John Doe"; // This should ideally come from context or API
 
-  
-
   const adminButtons = [
     {
       id: 1,
@@ -51,18 +49,17 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="dashboard-container">
-      <header className="dashboard-header">
+    <div className="mra-dashboard-container">
+      <header className="mra-dashboard-header">
         <h1>Welcome</h1>
-        
       </header>
       
-      <div className="quick-stats">
-        <div className="stat-card">
+      <div className="mra-quick-stats">
+        <div className="mra-stat-card">
           <h3>24</h3>
           <p>Working Days</p>
         </div>
-        <div className="stat-card">
+        <div className="mra-stat-card">
             <h3>Date</h3>
             <p>{new Date().toLocaleDateString('en-US', {
             weekday: 'long',
@@ -72,27 +69,24 @@ const Dashboard = () => {
             })}</p>
         </div>
 
-
-        <div className="stat-card">
+        <div className="mra-stat-card">
           <h3>98%</h3>
           <p>Attendance</p>
         </div>
       </div>
 
-      
-
       {/* Admin section */}
-      <div className="admin-grid">
+      <div className="mra-admin-grid">
         <h2>Admin Dashboard</h2>
-        <div className="action-grid">
+        <div className="mra-action-grid">
           {adminButtons.map((button) => (
             <div 
               key={button.id}
-              className="action-card"
+              className="mra-action-card"
               style={{ borderTop: `4px solid ${button.color}` }}
               onClick={() => navigate(button.path)}
             >
-              <div className="action-icon" style={{ color: button.color }}>
+              <div className="mra-action-icon" style={{ color: button.color }}>
                 <FontAwesomeIcon icon={button.icon} />
               </div>
               <h3>{button.title}</h3>
@@ -102,7 +96,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="recent-activity">
+      <div className="mra-recent-activity">
         <h2>Recent Activity</h2>
         <ul>
           <li>Attendance marked - Today at 08:05 AM</li>

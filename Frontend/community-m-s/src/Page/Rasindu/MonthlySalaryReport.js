@@ -3,37 +3,43 @@ import axios from "axios";
 import "../../Css/Rasindu/SalaryReport.css";
 
 const MonthlySalaryReport = () => {
+  const today = new Date();
+  const defaultYear = today.getFullYear();
+  const defaultMonth = today.getMonth() + 1;
+
   const [salaryData, setSalaryData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedMonth, setSelectedMonth] = useState(defaultMonth);
+  const [selectedYear, setSelectedYear] = useState(defaultYear);
 
   useEffect(() => {
-    const fetchSalaryData = async () => {
+    const fetchEmployeeReport = async () => {
+      setLoading(true);
       try {
-        const response = await axios.get("http://localhost:8070/salary/monthlysal");
-        const formattedData = response.data.map(item => ({
-          ...item,
-          totalHours: item.totalHours.toFixed(2),
-          monthlySalary: item.monthlySalary.toFixed(2),
-          hourlyRate: item.hourlyRate.toFixed(2)
-        }));
-        setSalaryData(formattedData);
+        const response = await axios.get(
+          `http://localhost:8070/salary/monthlysal/${selectedYear}/${selectedMonth}`
+        );
+        setSalaryData(response.data);
         setLoading(false);
       } catch (err) {
-        setError("Failed to load salary data. Please try again later.");
+        setError(err.response?.data?.error || "Failed to load salary details");
         setLoading(false);
-        console.error("Error fetching salary data:", err);
       }
     };
 
-    fetchSalaryData();
-  }, []);
+    fetchEmployeeReport();
+  }, [selectedYear, selectedMonth]);
+
+  const handleMonthChange = (e) => {
+    setSelectedMonth(Number(e.target.value));
+  };
 
   const formatCurrency = (value) => {
-    return new Intl.NumberFormat('en-LK', {
-      style: 'decimal',
+    return new Intl.NumberFormat("en-LK", {
+      style: "decimal",
       minimumFractionDigits: 2,
-      maximumFractionDigits: 2
+      maximumFractionDigits: 2,
     }).format(value);
   };
 
@@ -56,6 +62,22 @@ const MonthlySalaryReport = () => {
   return (
     <div className="salary-report-container">
       <h2 className="salary-heading">Monthly Salary Report</h2>
+
+      <select value={selectedMonth} onChange={handleMonthChange}>
+        <option value={1}>January</option>
+        <option value={2}>February</option>
+        <option value={3}>March</option>
+        <option value={4}>April</option>
+        <option value={5}>May</option>
+        <option value={6}>June</option>
+        <option value={7}>July</option>
+        <option value={8}>August</option>
+        <option value={9}>September</option>
+        <option value={10}>October</option>
+        <option value={11}>November</option>
+        <option value={12}>December</option>
+      </select>
+
       <table className="salary-table">
         <thead>
           <tr>
