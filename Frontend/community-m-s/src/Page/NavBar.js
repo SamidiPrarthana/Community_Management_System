@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../Css/navBar.css';
 import { FaUser, FaSignOutAlt } from 'react-icons/fa';
-import logo from '../image/logo.jpg';
+import logo from '../image/logo.png';
 
 function Navbar({ isLoggedIn, onLogout }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

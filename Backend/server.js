@@ -1,8 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
-const cookieParser = require('cookie-parser');
-const cors = require('cors')
+
 const app = express()
 const host = 'localhost';
 const logger = require('./src/utils/logger');
@@ -18,6 +17,10 @@ app.use(cookieParser());
 app.use(express.json());
 
 
+const path = require("path");
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
+
+
 app.use((err, req, res, next) => {
     logger.error(err.stack);
     res.status(500).send('Something broke!');
@@ -27,8 +30,8 @@ app.use((err, req, res, next) => {
 const uri = process.env.MONGO_URI
 
 // Logging configuration
-const morganMiddleware = require("./src/utils/morganMiddleware");
-app.use(morganMiddleware);
+//const morganMiddleware = require("./src/utils/morganMiddleware");
+//app.use(morganMiddleware);
 
 
 const connect = async () => {
@@ -52,6 +55,17 @@ const server = app.listen(PORT, host, () => {
 
 const userRoutes = require('./src/routes/Kavishka/userRouter');
 app.use('/api/users', userRoutes);
+
+
+//Rasindu
+const EmployeeRouter = require('./src/routes/Rasindu/Employee');
+app.use("/employee",EmployeeRouter);
+const AttendanceRouter = require('./src/routes/Rasindu/attendance');
+app.use("/attendance",AttendanceRouter);
+const salaryRoutes = require("./src/routes/Rasindu/salary");
+app.use("/salary", salaryRoutes);
+
+
 
 
 

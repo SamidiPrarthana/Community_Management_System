@@ -31,7 +31,7 @@ const Login = () => {
 
 
                 if (data.user.userType === "Admin") {
-                    window.location.href = "/admin/dashboard";
+                    window.location.href = "/maindashboard";
                 } else if (data.user.userType === "Staff") {
                     window.location.href = "/staff/dashboard";
                 } else if (data.user.userType === "Resident") {

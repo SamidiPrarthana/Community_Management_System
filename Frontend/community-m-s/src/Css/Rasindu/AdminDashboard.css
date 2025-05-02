@@ -1,0 +1,156 @@
+/* Admin Dashboard Styles */
+.admin-dashboard-containerRa {
+  display: flex;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.832);
+  width: 100%;
+}
+
+.admin-sidebarRa {
+  width: 250px;
+  background: #1f2937;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-titleRa {
+  font-size: 22px;
+  color: #ff5656;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sidebar-menuRa {
+  list-style: none;
+  padding: 0;
+  margin-top: 100px;
+}
+
+.menu-itemRa {
+  padding: 12px;
+  font-size: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+  margin-top: 30px;
+  background: transparent;
+  border: none;
+  color: #f4f4f4;
+  width: 100%;
+  text-align: left;
+}
+
+.menu-itemRa:hover {
+  background: #374151;
+}
+
+.logout-buttonRa {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.logout-buttonRa:hover {
+  background: #b91c1c;
+}
+
+.admin-main-contentRa {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.dashboard-headingRa {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.card-gridRa {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.dashboard-cardRa {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.dashboard-cardRa:hover {
+  transform: translateY(-5px);
+}
+
+.icon-blueRa {
+  font-size: 40px;
+  color: #3b82f6;
+  margin-bottom: 10px;
+}
+
+.icon-greenRa {
+  font-size: 40px;
+  color: #10b981;
+  margin-bottom: 10px;
+}
+
+.icon-yellowRa {
+  font-size: 40px;
+  color: #f59e0b;
+  margin-bottom: 10px;
+}
+
+.card-valueRa {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .admin-dashboard-containerRa {
+      flex-direction: column;
+  }
+
+  .admin-sidebarRa {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .sidebar-menuRa {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+  }
+
+  .menu-itemRa {
+      margin-top: 10px;
+      font-size: 16px;
+      padding: 8px;
+  }
+
+  .card-gridRa {
+      grid-template-columns: 1fr;
+  }
+}
