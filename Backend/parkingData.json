@@ -1,0 +1,111 @@
+[
+  {
+    "slotNumber": 1,
+    "status": "occupied",
+    "reservedForTime": "06:00",
+    "vehicles": [
+      {
+        "vehicleId": "CAR-7777",
+        "leavingTime": "06:30",
+        "date": "2025-05-03",
+        "isActive": true
+      }
+    ]
+  },
+  {
+    "slotNumber": 2,
+    "status": "occupied",
+    "reservedForTime": "06:00",
+    "vehicles": [
+      {
+        "vehicleId": "CAR-7777",
+        "leavingTime": "06:30",
+        "date": "2025-05-03",
+        "isActive": true
+      }
+    ]
+  },
+  {
+    "slotNumber": 3,
+    "status": "occupied",
+    "reservedForTime": "06:00",
+    "vehicles": [
+      {
+        "vehicleId": "CAR-7777",
+        "leavingTime": "06:30",
+        "date": "2025-05-03",
+        "isActive": true
+      }
+    ]
+  },
+  {
+    "slotNumber": 4,
+    "status": "occupied",
+    "reservedForTime": "06:00",
+    "vehicles": [
+      {
+        "vehicleId": "CAR-7777",
+        "leavingTime": "06:30",
+        "date": "2025-05-03",
+        "isActive": true
+      }
+    ]
+  },
+  {
+    "slotNumber": 5,
+    "status": "occupied",
+    "reservedForTime": "06:00",
+    "vehicles": [
+      {
+        "vehicleId": "CAR-7777",
+        "leavingTime": "06:30",
+        "date": "2025-05-03",
+        "isActive": true
+      }
+    ]
+  },
+  {
+    "slotNumber": 6,
+    "status": "occupied",
+    "reservedForTime": "06:00",
+    "vehicles": [
+      {
+        "vehicleId": "CAR-7777",
+        "leavingTime": "06:30",
+        "date": "2025-05-03",
+        "isActive": true
+      }
+    ]
+  },
+  {
+    "slotNumber": 7,
+    "status": "occupied",
+    "reservedForTime": "06:00",
+    "vehicles": [
+      {
+        "vehicleId": "CAR-7777",
+        "leavingTime": "06:30",
+        "date": "2025-05-03",
+        "isActive": true
+      }
+    ]
+  },
+  {
+    "slotNumber": 8,
+    "status": "free",
+    "reservedForTime": "07:00",
+    "vehicles": []
+  },
+  {
+    "slotNumber": 9,
+    "status": "free",
+    "reservedForTime": "07:00",
+    "vehicles": []
+  },
+  {
+    "slotNumber": 10,
+    "status": "free",
+    "reservedForTime": "07:00",
+    "vehicles": []
+  }
+]
