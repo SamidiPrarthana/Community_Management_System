@@ -51,7 +51,7 @@ const Dashboard = () => {
   return (
     <div className="mra-dashboard-container">
       <header className="mra-dashboard-header">
-        <h1>Welcome</h1>
+        <h1>Welcome...!</h1>
       </header>
       
       <div className="mra-quick-stats">
@@ -89,8 +89,22 @@ const Dashboard = () => {
               <div className="mra-action-icon" style={{ color: button.color }}>
                 <FontAwesomeIcon icon={button.icon} />
               </div>
-              <h3>{button.title}</h3>
-              <p>{button.description}</p>
+              <h3 style={{ 
+                color: '#ffffff', // White text
+                fontSize: '1.2rem',
+                fontWeight: '600',
+                marginBottom: '0.5rem'
+              }}>
+                {button.title}
+              </h3>
+              <p style={{
+                color: '#a0a0a0', // Light gray text
+                fontSize: '0.9rem',
+                margin: '0',
+                lineHeight: '1.4'
+              }}>
+                {button.description}
+              </p>
             </div>
           ))}
         </div>

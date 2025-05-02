@@ -144,11 +144,13 @@ body {
 .mra-dashboard-header h1 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
+  color: #0008ff;
 }
 
 .mra-dashboard-header p {
   color: var(--dark-muted);
   font-size: 0.9rem;
+  color: #9a9a9a;
 }
 
 .mra-quick-stats {
@@ -169,6 +171,7 @@ body {
 .mra-stat-card h3 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  color: #ffffff;
 }
 
 .mra-stat-card p {
