@@ -1,0 +1,155 @@
+/* Full-screen background image */
+.body-k {
+    position: relative;
+    min-height: 100vh;
+    background-image: url("../image/image4.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay for the background image */
+.body-k::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black overlay with transparency */
+    z-index: 1;
+}
+
+/* Form container style */
+.form-container {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    /* Transparent white background */
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    /* Ensure the form is on top of the overlay */
+}
+
+/* Form title */
+.form-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+/* Form content */
+.form-content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.form-content:hover {
+    transform: scale(1.02);
+}
+
+/* Input fields */
+.input-field {
+    width: 95%;
+    padding: 7px;
+    margin-bottom: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-field:focus {
+    border-color: #4f46e5;
+    outline: none;
+    box-shadow: 0 0 8px rgba(79, 70, 229, 0.6);
+}
+
+/* Grid for days */
+.days-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Individual day container */
+.day-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.day-container:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Checkbox */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+    gap: 8px;
+}
+
+.checkbox {
+    accent-color: #4f46e5;
+    width: 18px;
+    height: 18px;
+}
+
+/* Time input */
+.time-input {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-top: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.time-input:focus {
+    border-color: #9333ea;
+    box-shadow: 0 0 6px rgba(147, 51, 234, 0.6);
+}
+
+/* Submit button */
+.submit-button {
+    width: 100%;
+    background: linear-gradient(90deg, #22c55e, #84cc16);
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+.submit-button:hover {
+    background: linear-gradient(90deg, #16a34a, #65a30d);
+    transform: scale(1.05);
+}

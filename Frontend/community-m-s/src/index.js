@@ -6,6 +6,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Login from './components/login.js';
 import Signup from './components/signup.js';
+import ResidentDashbord from './Page/Kavishka/ResidentDashbord.js';
+import ApartmentForm from './Page/Kavishka/ApartmentForm.js';
+import VehicleRegisterForm from './Page/Kavishka/VehicleRegisterForm.js';
+import Userlist from './Page/Kavishka/Dashboard.js';
+import Security from './Page/Kavishka/security.js';
+import Demoparking from './Page/Kavishka/demoparking.js';
+import LeaveTime from './Page/Kavishka/leavingTime.js';
+//import SlotMap from './Page/Kavishka/slotMap.js';
 
 //Rasindu
 import EmployeeListPage from './Page/Rasindu/EmployeeListPage.js';
@@ -23,7 +31,6 @@ import EmployeeSalaryReport from "./Page/Rasindu/EmployeeSalaryReport.js";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
 
-
 root.render(
   <BrowserRouter>
     <Routes>
@@ -32,6 +39,15 @@ root.render(
 
       <Route path='/signup' element={< Signup />} />
       <Route path='/login' element={<Login />} />
+      <Route path='/residentDashbord' element={<ResidentDashbord />} />
+      <Route path='/apartmentForm' element={<ApartmentForm />} />
+      <Route path='/vehicleRegisterForm' element={<VehicleRegisterForm />} />
+      <Route path='/user' element={<Userlist />} />
+      <Route path='/security' element={<Security />} />
+      <Route path='/demoparking' element={<Demoparking />} />
+      <Route path='/leave' element={<LeaveTime />} />
+
+
 
 
       <Route path="/employees" element={<EmployeeListPage/>}/>

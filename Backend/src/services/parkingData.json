@@ -1,0 +1,714 @@
+{
+  "slots": [
+    {
+      "slotNumber": 1,
+      "status": "free",
+      "reservedForTime": "06:00"
+    },
+    {
+      "slotNumber": 2,
+      "status": "free",
+      "reservedForTime": "06:00"
+    },
+    {
+      "slotNumber": 3,
+      "status": "free",
+      "reservedForTime": "06:00"
+    },
+    {
+      "slotNumber": 4,
+      "status": "free",
+      "reservedForTime": "06:00"
+    },
+    {
+      "slotNumber": 5,
+      "status": "free",
+      "reservedForTime": "06:00"
+    },
+    {
+      "slotNumber": 6,
+      "status": "free",
+      "reservedForTime": "06:00"
+    },
+    {
+      "slotNumber": 7,
+      "status": "occupied",
+      "reservedForTime": null
+    },
+    {
+      "slotNumber": 8,
+      "status": "occupied",
+      "reservedForTime": "07:00"
+    },
+    {
+      "slotNumber": 9,
+      "status": "free",
+      "reservedForTime": "07:00"
+    },
+    {
+      "slotNumber": 10,
+      "status": "free",
+      "reservedForTime": "07:00"
+    },
+    {
+      "slotNumber": 11,
+      "status": "free",
+      "reservedForTime": null
+    },
+    {
+      "slotNumber": 12,
+      "status": "free",
+      "reservedForTime": null
+    },
+    {
+      "slotNumber": 13,
+      "status": "occupied",
+      "reservedForTime": null
+    },
+    {
+      "slotNumber": 14,
+      "status": "occupied",
+      "reservedForTime": null
+    },
+    {
+      "slotNumber": 15,
+      "status": "occupied",
+      "reservedForTime": null
+    },
+    {
+      "slotNumber": 16,
+      "status": "occupied",
+      "reservedForTime": null
+    },
+    {
+      "slotNumber": 17,
+      "status": "occupied",
+      "reservedForTime": null
+    },
+    {
+      "slotNumber": 18,
+      "status": "occupied",
+      "reservedForTime": null
+    },
+    {
+      "slotNumber": 19,
+      "status": "occupied",
+      "reservedForTime": null
+    },
+    {
+      "slotNumber": 20,
+      "status": "occupied",
+      "reservedForTime": null
+    },
+    {
+      "slotNumber": 21,
+      "status": "occupied",
+      "reservedForTime": null
+    },
+    {
+      "slotNumber": 22,
+      "status": "free",
+      "reservedForTime": null
+    },
+    {
+      "slotNumber": 23,
+      "status": "free",
+      "reservedForTime": null
+    },
+    {
+      "slotNumber": 24,
+      "status": "free",
+      "reservedForTime": null
+    },
+    {
+      "slotNumber": 25,
+      "status": "free",
+      "reservedForTime": null
+    },
+    {
+      "slotNumber": 26,
+      "status": "free",
+      "reservedForTime": null
+    },
+    {
+      "slotNumber": 27,
+      "status": "free",
+      "reservedForTime": null
+    },
+    {
+      "slotNumber": 28,
+      "status": "free",
+      "reservedForTime": null
+    },
+    {
+      "slotNumber": 29,
+      "status": "free",
+      "reservedForTime": null
+    },
+    {
+      "slotNumber": 30,
+      "status": "free",
+      "reservedForTime": null
+    }
+  ],
+  "vehicles": [
+    {
+      "slot": 7,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-02T23:45",
+      "entryTime": "2025-05-02 04:16",
+      "isActive": false,
+      "createdAt": "2025-05-01T22:46:06.943Z"
+    },
+    {
+      "slot": 1,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Car",
+      "leavingTime": "2025-05-02T06:00",
+      "entryTime": "2025-05-02 04:16",
+      "isActive": false,
+      "createdAt": "2025-05-01T22:46:35.448Z"
+    },
+    {
+      "slot": 11,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-02T06:16",
+      "entryTime": "2025-05-02 04:17",
+      "isActive": false,
+      "createdAt": "2025-05-01T22:47:02.451Z"
+    },
+    {
+      "slot": 8,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Car",
+      "leavingTime": "2025-05-16T07:00",
+      "entryTime": "2025-05-02 04:18",
+      "isActive": false,
+      "createdAt": "2025-05-01T22:48:16.152Z"
+    },
+    {
+      "slot": 7,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Car",
+      "leavingTime": "2025-05-02T07:18",
+      "entryTime": "2025-05-02 04:18",
+      "isActive": false,
+      "createdAt": "2025-05-01T22:48:40.845Z"
+    },
+    {
+      "slot": 11,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Van",
+      "leavingTime": "2025-05-02T07:23",
+      "entryTime": "2025-05-02 04:19",
+      "isActive": false,
+      "createdAt": "2025-05-01T22:49:01.353Z"
+    },
+    {
+      "slot": 12,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-02T06:21",
+      "entryTime": "2025-05-02 04:19",
+      "isActive": false,
+      "createdAt": "2025-05-01T22:49:28.291Z"
+    },
+    {
+      "slot": 2,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Van",
+      "leavingTime": "2025-05-02T06:00",
+      "entryTime": "2025-05-02 04:19",
+      "isActive": false,
+      "createdAt": "2025-05-01T22:49:48.877Z"
+    },
+    {
+      "slot": 3,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-02T06:57",
+      "entryTime": "2025-05-02 04:22",
+      "isActive": false,
+      "createdAt": "2025-05-01T22:52:32.605Z"
+    },
+    {
+      "slot": 13,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-02T07:25",
+      "entryTime": "2025-05-02 04:22",
+      "isActive": false,
+      "createdAt": "2025-05-01T22:52:59.326Z"
+    },
+    {
+      "slot": 14,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-03 20:01",
+      "entryTime": "2025-05-02 04:35",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:05:22.626Z"
+    },
+    {
+      "slot": 15,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-03 20:00",
+      "entryTime": "2025-05-02 04:35",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:05:29.280Z"
+    },
+    {
+      "slot": 16,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-03 20:02",
+      "entryTime": "2025-05-02 04:35",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:05:48.406Z"
+    },
+    {
+      "slot": 14,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-03 20:00",
+      "entryTime": "2025-05-02 04:36",
+      "isActive": true,
+      "createdAt": "2025-05-01T23:06:12.138Z"
+    },
+    {
+      "slot": 15,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Van",
+      "leavingTime": "2025-05-03 20:00",
+      "entryTime": "2025-05-02 04:36",
+      "isActive": true,
+      "createdAt": "2025-05-01T23:06:59.511Z"
+    },
+    {
+      "slot": 16,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-03 20:00",
+      "entryTime": "2025-05-02 04:37",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:07:11.016Z"
+    },
+    {
+      "slot": 1,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-03 06:00",
+      "entryTime": "2025-05-02 04:39",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:09:08.452Z"
+    },
+    {
+      "slot": 17,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "06:03",
+      "entryTime": "2025-05-02 04:39",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:09:22.279Z"
+    },
+    {
+      "slot": 2,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-03 06:38",
+      "entryTime": "2025-05-02 04:39",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:09:41.375Z"
+    },
+    {
+      "slot": 3,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Van",
+      "leavingTime": "2025-05-03 06:31",
+      "entryTime": "2025-05-02 04:39",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:09:58.823Z"
+    },
+    {
+      "slot": 17,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-02 04:40",
+      "entryTime": "2025-05-02 04:40",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:10:14.045Z"
+    },
+    {
+      "slot": 17,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-03 09:00",
+      "entryTime": "2025-05-02 04:43",
+      "isActive": true,
+      "createdAt": "2025-05-01T23:13:50.708Z"
+    },
+    {
+      "slot": 16,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Car",
+      "leavingTime": "2025-05-03 11:00",
+      "entryTime": "2025-05-02 04:44",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:14:19.746Z"
+    },
+    {
+      "slot": 18,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-03 11:18",
+      "entryTime": "2025-05-02 04:44",
+      "isActive": true,
+      "createdAt": "2025-05-01T23:14:39.572Z"
+    },
+    {
+      "slot": 19,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Car",
+      "leavingTime": "2025-05-02 04:45",
+      "entryTime": "2025-05-02 04:45",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:15:23.063Z"
+    },
+    {
+      "slot": 19,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Car",
+      "leavingTime": "2025-05-02 04:46",
+      "entryTime": "2025-05-02 04:46",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:16:07.219Z"
+    },
+    {
+      "slot": 19,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-02 04:47",
+      "entryTime": "2025-05-02 04:47",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:17:25.190Z"
+    },
+    {
+      "slot": 19,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-02 04:47",
+      "entryTime": "2025-05-02 04:47",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:17:51.574Z"
+    },
+    {
+      "slot": 19,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-03 06:00",
+      "entryTime": "2025-05-02 04:50",
+      "isActive": true,
+      "createdAt": "2025-05-01T23:20:34.286Z"
+    },
+    {
+      "slot": 9,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-03 07:00",
+      "entryTime": "2025-05-02 04:50",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:20:44.265Z"
+    },
+    {
+      "slot": 10,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-03 07:00",
+      "entryTime": "2025-05-02 04:52",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:22:41.860Z"
+    },
+    {
+      "slot": 8,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-03 07:00",
+      "entryTime": "2025-05-02 04:53",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:23:23.414Z"
+    },
+    {
+      "slot": 9,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Car",
+      "leavingTime": "2025-05-03 07:00",
+      "entryTime": "2025-05-02 04:56",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:26:01.950Z"
+    },
+    {
+      "slot": 16,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "06:06",
+      "entryTime": "2025-05-02 04:56",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:26:21.136Z"
+    },
+    {
+      "slot": 16,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-03 00:00",
+      "entryTime": "2025-05-02 04:56",
+      "isActive": true,
+      "createdAt": "2025-05-01T23:26:38.154Z"
+    },
+    {
+      "slot": 20,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-03 12:00",
+      "entryTime": "2025-05-02 04:57",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:27:02.419Z"
+    },
+    {
+      "slot": 21,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Van",
+      "leavingTime": "2025-05-03 13:00",
+      "entryTime": "2025-05-02 04:57",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:27:16.096Z"
+    },
+    {
+      "slot": 22,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "06:06",
+      "entryTime": "2025-05-02 04:57",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:27:35.089Z"
+    },
+    {
+      "slot": 22,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Car",
+      "leavingTime": "2025-05-02 04:57",
+      "entryTime": "2025-05-02 04:57",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:27:50.006Z"
+    },
+    {
+      "slot": 22,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Car",
+      "leavingTime": "2025-05-03 06:00",
+      "entryTime": "2025-05-02 04:58",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:28:09.560Z"
+    },
+    {
+      "slot": 22,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Car",
+      "leavingTime": "2025-05-02 04:58",
+      "entryTime": "2025-05-02 04:58",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:28:30.224Z"
+    },
+    {
+      "slot": 10,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Car",
+      "leavingTime": "2025-05-03 07:00:00",
+      "entryTime": "2025-05-02 05:02",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:32:49.774Z"
+    },
+    {
+      "slot": 22,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-02 05:03",
+      "entryTime": "2025-05-02 05:03",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:33:18.724Z"
+    },
+    {
+      "slot": 22,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Car",
+      "leavingTime": "2025-05-02 05:03",
+      "entryTime": "2025-05-02 05:03",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:33:42.921Z"
+    },
+    {
+      "slot": 22,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Car",
+      "leavingTime": "2025-05-02 05:04",
+      "entryTime": "2025-05-02 05:04",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:34:02.001Z"
+    },
+    {
+      "slot": 22,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-02 05:04",
+      "entryTime": "2025-05-02 05:04",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:34:34.296Z"
+    },
+    {
+      "slot": 11,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-02 05:05",
+      "entryTime": "2025-05-02 05:05",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:35:10.576Z"
+    },
+    {
+      "slot": 11,
+      "vehicleNumber": "Abc-1jjjj",
+      "vehicleType": "Car",
+      "leavingTime": "2025-05-03 10:00:00",
+      "entryTime": "2025-05-02 05:06",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:36:04.986Z"
+    },
+    {
+      "slot": 12,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Car",
+      "leavingTime": "2025-05-02 05:11",
+      "entryTime": "2025-05-02 05:11",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:41:15.327Z"
+    },
+    {
+      "slot": 12,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Car",
+      "leavingTime": "2025-05-02 05:17",
+      "entryTime": "2025-05-02 05:17",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:47:29.527Z"
+    },
+    {
+      "slot": 12,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-02 05:23",
+      "entryTime": "2025-05-02 05:23",
+      "isActive": false,
+      "createdAt": "2025-05-01T23:53:30.347Z"
+    },
+    {
+      "slot": 12,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-02 05:38",
+      "entryTime": "2025-05-02 05:38",
+      "isActive": false,
+      "createdAt": "2025-05-02T00:08:01.553Z"
+    },
+    {
+      "slot": 12,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-03 10:00:00",
+      "entryTime": "2025-05-02 05:38",
+      "isActive": false,
+      "createdAt": "2025-05-02T00:08:10.628Z"
+    },
+    {
+      "slot": 20,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Car",
+      "leavingTime": "2025-05-02 05:38",
+      "entryTime": "2025-05-02 05:38",
+      "isActive": false,
+      "createdAt": "2025-05-02T00:08:22.799Z"
+    },
+    {
+      "slot": 9,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Car",
+      "leavingTime": "2025-05-03 07:00:00",
+      "entryTime": "2025-05-02 05:52",
+      "isActive": false,
+      "createdAt": "2025-05-02T00:22:21.170Z"
+    },
+    {
+      "slot": 7,
+      "vehicleNumber": "ABC-1234",
+      "vehicleType": "Van",
+      "leavingTime": "2025-05-03 10:30:00",
+      "entryTime": "2025-05-02 07:20",
+      "isActive": false,
+      "createdAt": "2025-05-02T01:50:00.111Z"
+    },
+    {
+      "slot": 20,
+      "vehicleNumber": "ABC-1234",
+      "vehicleType": "Van",
+      "leavingTime": "2025-05-03 10:30:00",
+      "entryTime": "2025-05-02 07:21",
+      "isActive": true,
+      "createdAt": "2025-05-02T01:51:18.121Z"
+    },
+    {
+      "slot": 10,
+      "vehicleNumber": "ABC-1234",
+      "vehicleType": "Van",
+      "leavingTime": "2025-05-03 08:30:00",
+      "entryTime": "2025-05-02 07:24",
+      "isActive": false,
+      "createdAt": "2025-05-02T01:54:52.522Z"
+    },
+    {
+      "slot": 13,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Bike",
+      "leavingTime": "2025-05-03 08:00:00",
+      "entryTime": "2025-05-02 14:51",
+      "isActive": true,
+      "createdAt": "2025-05-02T09:21:11.604Z"
+    },
+    {
+      "slot": 21,
+      "vehicleNumber": "Abc-1233",
+      "vehicleType": "Van",
+      "leavingTime": "2025-05-03 10:00:00",
+      "entryTime": "2025-05-02 14:51",
+      "isActive": true,
+      "createdAt": "2025-05-02T09:21:24.650Z"
+    },
+    {
+      "slot": 7,
+      "vehicleNumber": "ABC-1234",
+      "vehicleType": "Car",
+      "leavingTime": "2025-05-03 07:45:00",
+      "entryTime": "2025-05-02 15:11",
+      "isActive": true,
+      "createdAt": "2025-05-02T09:41:04.630Z"
+    },
+    {
+      "slot": 8,
+      "vehicleNumber": "ABC-1234",
+      "vehicleType": "Car",
+      "leavingTime": "2025-05-03 07:45:00",
+      "entryTime": "2025-05-02 15:14",
+      "isActive": true,
+      "createdAt": "2025-05-02T09:44:10.408Z"
+    }
+  ]
+}

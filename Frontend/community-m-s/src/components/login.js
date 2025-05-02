@@ -26,13 +26,16 @@ const Login = () => {
             if (res.ok) {
                 localStorage.setItem("token", data.token);
                 localStorage.setItem("userType", data.user.userType);
+                localStorage.setItem("userName", data.user.name);
+                localStorage.setItem("userId", data.user._id);
+
 
                 if (data.user.userType === "Admin") {
                     window.location.href = "/maindashboard";
                 } else if (data.user.userType === "Staff") {
                     window.location.href = "/staff/dashboard";
                 } else if (data.user.userType === "Resident") {
-                    window.location.href = "/resident/dashboard";
+                    window.location.href = "/residentDashbord";
                 } else {
                     window.location.href = "/dashboard";
                 }
@@ -43,6 +46,7 @@ const Login = () => {
             setError("⚠️ Server connection failed. Please try again later.");
         }
     };
+
 
     return (
         <>

@@ -57,10 +57,23 @@ const deleteUserController = async (req, res) => {
         : res.status(500).json({ error: result.error });
 };
 
+const getUserByQRCode = async (req, res) => {
+    const { id } = req.params;
+
+    const result = await getUserById(id);  // This uses your service function
+    result.success
+        ? res.status(200).json(result.data)
+        : res.status(404).json({ error: result.error });
+};
+
+
+
 module.exports = {
-    registerController, loginController,
+    registerController,
+    loginController,
     getAllUsersController,
     getUserByIdController,
     updateUserController,
-    deleteUserController
+    deleteUserController,
+    getUserByQRCode,
 };
